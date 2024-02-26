@@ -75,7 +75,7 @@ function Influencers() {
             <button
               data-modal-target="crud-modal"
               data-modal-show="crud-modal"
-              className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button"
               onClick={() => setShowModal(true)}
             >
@@ -87,13 +87,13 @@ function Influencers() {
                 id="crud-modal"
                 tabIndex="-1"
                 aria-hidden="true"
-                style={{ marginLeft: "540px", marginTop: "25px" }}
-                className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                style={{ marginLeft: "750px", marginTop: "34px" }}
+                className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full "
               >
                 <div className="relative p-4 w-full max-w-md max-h-full">
-                  <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <div className="relative bg-white rounded-lg shadow">
+                    <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 bg-gray-100">
+                      <h3 className="text-lg font-semibold text-gray-900">
                         Create New Product
                       </h3>
                       <button
@@ -121,12 +121,12 @@ function Influencers() {
                       </button>
                     </div>
 
-                    <form className="p-4 md:p-5">
+                    <form className="p-4 md:p-5 bg-gray-100">
                       <div className="grid gap-4 mb-4 grid-cols-2">
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900"
                           >
                             Name
                           </label>
@@ -134,7 +134,7 @@ function Influencers() {
                             type="text"
                             name="name"
                             id="name"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -143,7 +143,7 @@ function Influencers() {
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900"
                           >
                             Username
                           </label>
@@ -151,7 +151,7 @@ function Influencers() {
                             type="text"
                             name="username"
                             id="username"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -160,7 +160,7 @@ function Influencers() {
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             Email
                           </label>
@@ -168,7 +168,7 @@ function Influencers() {
                             type="text"
                             name="email"
                             id="email"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -177,7 +177,7 @@ function Influencers() {
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             Country
                           </label>
@@ -185,7 +185,7 @@ function Influencers() {
                             type="text"
                             name="country"
                             id="country"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -194,7 +194,7 @@ function Influencers() {
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             Total Submission
                           </label>
@@ -202,7 +202,7 @@ function Influencers() {
                             type="text"
                             name="totalsubmission"
                             id="totalsubmission"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -211,7 +211,7 @@ function Influencers() {
                         <div className="col-span-2">
                           <label
                             htmlFor="name"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             Last Submission
                           </label>
@@ -219,7 +219,7 @@ function Influencers() {
                             type="text"
                             name="lastsubmission"
                             id="lastsubmission"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                             placeholder="Type product name"
                             required=""
                             onChange={onChange}
@@ -229,7 +229,7 @@ function Influencers() {
                       <button
                         type="button"
                         onClick={handleClick}
-                        className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
                         <svg
                           className="me-1 -ms-1 w-5 h-5"
@@ -281,7 +281,7 @@ function Influencers() {
                         className="bg-gray-50 border-b hover:bg-gray-100"
                         key={index}
                       >
-                        <td className="w-4 p-4">
+                        <td className="w-4 p-4" key={influ._id}>
                           <div className="flex items-center"></div>
                         </td>
                         <th

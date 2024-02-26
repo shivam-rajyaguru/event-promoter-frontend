@@ -1,7 +1,15 @@
 import { toast } from "react-hot-toast";
+import { authenticate } from "./helper";
 export async function userPassValidate(values) {
-  const error = usernameverify({}, values);
+  const error = emailVerify({}, values);
   const errors = passwordVerify({}, values);
+
+  if (values.email) {
+    const { status } = await authenticate(values.email);
+    if (status !== 200) {
+      error.exist = toast.error("Email does't exist");
+    }
+  }
   return error, errors;
 }
 

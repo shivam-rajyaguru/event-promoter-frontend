@@ -8,10 +8,11 @@ function Brand() {
   return (
     <>
       <Navbar />
+
       <div className="flex">
         <div
           // className="bg-slate-200"
-          className=""
+          className="mt-7"
           style={{ height: "100vh", width: "1000px" }}
         >
           <div className="mt-1 ml-8">
@@ -68,7 +69,7 @@ function Brand() {
             </button>
           </div>
         </div>
-        <div className="" style={{ width: "770px" }}>
+        <div className="mt-5" style={{ width: "770px" }}>
           <div className="flex justify-center mt-12">
             <h1 className="text-xl font-mono">Get Better Marketing Display</h1>
           </div>
