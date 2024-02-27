@@ -14,8 +14,11 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const setEmail = useAuthStore((state) => state.setEmail);
+  const setProfile = useAuthStore((state) => state.setProfile);
+
   // const username = useAuthStore((state) => state.auth.username);
   const { email } = useAuthStore((state) => state.auth);
+  const { profile } = useAuthStore((state) => state.auth);
   // const [{ isLoading, apiData, serverError }] = useFetch(`/user/${email}`);
 
   useEffect(() => {
@@ -32,6 +35,7 @@ function Login() {
     onSubmit: async (values) => {
       console.log(values);
       setEmail(values.email);
+      setProfile(values.profile);
       let loginPromise = verifyPassword({
         email: values.email,
         password: values.password,
@@ -70,7 +74,11 @@ function Login() {
 
             <form className="py-1" onSubmit={formik.handleSubmit}>
               <div className="profile flex justify-center py-4">
-                <img src={avatar} className={styles.profile_img} alt="avatar" />
+                <img
+                  src={profile || avatar}
+                  className={styles.profile_img}
+                  alt="avatar"
+                />
               </div>
 
               <div className="textbox flex flex-col items-center gap-6">

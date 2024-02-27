@@ -1,6 +1,7 @@
 import Brand from "./components/Brand";
 import ContactPage from "./components/ContactPage";
 import Influencers from "./components/Influencers";
+import Content from "./components/Content";
 import Navbar from "./components/Navbar";
 import Splash from "./components/Splash";
 import Login from "./components/Login";
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/reset" element={<Reset />}></Route>
           <Route exact path="/recovery" element={<Recovery />}></Route>
           <Route exact path="/brand" element={<Brand />}></Route>
+          <Route exact path="/content" element={<Content />}></Route>
           <Route exact path="/influence" element={<Influencers />}></Route>
           <Route exact path="/contact" element={<ContactPage />}></Route>
         </Routes>

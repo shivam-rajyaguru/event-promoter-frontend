@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import avatar from "../assets/profile.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,10 +10,22 @@ import { registerUser } from "../helper/helper";
 import { toast, Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import convertToBase64 from "../helper/convert";
+import { useAuthStore } from "../store/store";
 
 function Register() {
+  const setUsername = useAuthStore((state) => state.setUsername);
+  const { username } = useAuthStore((state) => state.auth);
+
+  useEffect(() => {
+    console.log(username);
+  });
+
   const navigate = useNavigate();
   const [file, setFile] = useState();
+
+  const setProfile = useAuthStore((state) => state.setProfile);
+  const { profile } = useAuthStore((state) => state.auth);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -26,6 +38,8 @@ function Register() {
     onSubmit: async (values) => {
       values = Object.assign(values, { profile: file || "" });
       console.log(values);
+      setUsername(values.username);
+      setProfile(values.file);
       let registerPromise = registerUser(values);
       toast.promise(registerPromise, {
         loading: "Creating...",

@@ -33,6 +33,7 @@ function Influencers() {
       inf.totalsubmission,
       inf.lastsubmission
     );
+    setShowModal(false);
   };
 
   const onChange = (e) => {
@@ -259,6 +260,7 @@ function Influencers() {
                   <th scope="col" className="p-4">
                     <div className="flex items-center"></div>
                   </th>
+
                   <th scope="col" className="px-6 py-3">
                     Influencers
                   </th>

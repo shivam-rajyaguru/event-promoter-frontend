@@ -1,8 +1,10 @@
 import React from "react";
 import { FaRegBell } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../store/store";
 
 const Navbar = () => {
+  const { username } = useAuthStore((state) => state.auth);
   return (
     <>
       <div className="">
@@ -10,8 +12,10 @@ const Navbar = () => {
           <h2 className="text-2xl ml-12">KeepUsPost</h2>
           <ul className="flex space-x-8 mr-36">
             <Link className="cursor-pointer">Home</Link>
-            <Link className="cursor-pointer">Activity</Link>
             <Link to="/brand" className="cursor-pointer">
+              Activity
+            </Link>
+            <Link to="/content" className="cursor-pointer">
               Content
             </Link>
             <Link to="/influence" className="cursor-pointer">
@@ -28,8 +32,7 @@ const Navbar = () => {
                   style={{ height: "20px", width: "20px", borderRadius: "50%" }}
                   alt="phto"
                 />
-
-                <p>Allie duck</p>
+                <p>{username}</p>
               </div>{" "}
             </li>
           </ul>
