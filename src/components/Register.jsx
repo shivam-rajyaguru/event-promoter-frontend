@@ -26,6 +26,9 @@ function Register() {
   const setProfile = useAuthStore((state) => state.setProfile);
   const { profile } = useAuthStore((state) => state.auth);
 
+  const setUserProvideType = useAuthStore((state) => state.setUserProvideType);
+  const { userProvideType } = useAuthStore((state) => state.auth);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -36,20 +39,30 @@ function Register() {
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
-      values = Object.assign(values, { profile: file || "" });
-      console.log(values);
-      setUsername(values.username);
-      setProfile(values.file);
-      let registerPromise = registerUser(values);
-      toast.promise(registerPromise, {
-        loading: "Creating...",
-        success: <b>Register Successfully...!</b>,
-        error: <b>Could not Register.</b>,
-      });
+      if (userType == "Admin" && secretKey != "SecretKey") {
+        // e.preventDefault();
+        toast.error("Invalid admin");
+      } else {
+        values = Object.assign(
+          values,
+          { profile: file || "" },
+          { userType: userType }
+        );
+        console.log(values);
+        setUsername(values.username);
+        setProfile(values.file);
+        setUserProvideType(values.userType);
+        let registerPromise = registerUser(values);
+        toast.promise(registerPromise, {
+          loading: "Creating...",
+          success: <b>Register Successfully...!</b>,
+          error: <b>Could not Register.</b>,
+        });
 
-      registerPromise.then(function () {
-        navigate("/login");
-      });
+        registerPromise.then(function () {
+          navigate("/login");
+        });
+      }
     },
   });
 
@@ -57,14 +70,47 @@ function Register() {
     const base64 = await convertToBase64(e.target.files[0]);
     setFile(base64);
   };
+
+  const [userType, setUserType] = useState("");
+  // console.log(userType);
+  const [secretKey, setSecretKey] = useState("");
+
   return (
     <div>
       <div className="container mx-auto">
         <Toaster position="top-center" reverseOrder={false}></Toaster>
         <div className="flex justify-center items-center h-screen">
-          <div className={styles.glass} style={{ width: "35%" }}>
+          <div
+            className={styles.glass}
+            style={{ width: "35%", height: "900px" }}
+          >
             <div className="title flex flex-col items-center">
               <h4 className="text-5xl font-bold">Register</h4>
+              <h6 className="text-base font-bold mt-4">As</h6>
+              <div className="flex">
+                <div className="pr-3 text-xl">
+                  <input
+                    type="radio"
+                    name="userType"
+                    id=""
+                    value="User"
+                    onChange={(e) => setUserType(e.target.value)}
+                  />{" "}
+                  User
+                </div>
+                <div className="text-xl">Or</div>
+                <div className="text-xl pl-3">
+                  <input
+                    className=""
+                    type="radio"
+                    name="userType"
+                    id=""
+                    onChange={(e) => setUserType(e.target.value)}
+                    value="Admin"
+                  />{" "}
+                  Admin
+                </div>
+              </div>
               <span className="py-4 text-xl w-2/3 text-center text-gray-500">
                 Happy to join you!
               </span>
@@ -88,6 +134,15 @@ function Register() {
               </div>
 
               <div className="textbox flex flex-col items-center gap-6">
+                {userType == "Admin" ? (
+                  <input
+                    className={styles.textbox}
+                    type="text"
+                    placeholder="Secret Key"
+                    onChange={(e) => setSecretKey(e.target.value)}
+                  />
+                ) : null}
+
                 <input
                   {...formik.getFieldProps("username")}
                   className={styles.textbox}

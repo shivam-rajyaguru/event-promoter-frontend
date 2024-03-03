@@ -108,6 +108,7 @@ export async function registerUser(credentials) {
       data: { msg },
       status,
     } = await axios.post(`http://localhost:2516/api/v1/register`, credentials);
+    console.log(credentials);
     let { username, email } = credentials;
     /** send email */
     if (status === 201) {

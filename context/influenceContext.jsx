@@ -14,6 +14,7 @@ const InfluenceProvider = ({ children }) => {
       });
 
       const json = await response.json();
+
       console.log(json.influencer);
       setInfluence(json.influencer);
     } catch (error) {
@@ -50,6 +51,7 @@ const InfluenceProvider = ({ children }) => {
     lastsubmission
   ) => {
     console.log("Adding influence");
+    // console.log(name, username);
     const response = await fetch(
       "http://localhost:2516/api/v1/influence/addInfluence",
       {

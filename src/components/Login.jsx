@@ -47,9 +47,12 @@ function Login() {
       });
 
       loginPromise.then((res) => {
-        let { token } = res.data;
+        // console.log(res);
+        let { token, userType } = res.data;
         localStorage.setItem("token", token);
-        navigate("/influence");
+        {
+          userType == "Admin" ? navigate("/home") : navigate("/homeBrand");
+        }
       });
     },
   });

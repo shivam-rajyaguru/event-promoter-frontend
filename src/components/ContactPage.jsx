@@ -1,10 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
+
+import NavbarBrand from "./Brand/NavnarBrand";
 
 function ContactPage() {
   return (
     <>
-      <Navbar />
+      <NavbarBrand />
       <div>
         <section className="">
           <div
