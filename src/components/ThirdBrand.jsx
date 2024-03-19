@@ -13,16 +13,34 @@ function ThirdBrand() {
   const onUpload = async (e) => {
     const base64 = await convertToBase64(e.target.files[0]);
     setFile(base64);
+    onChange(e);
   };
   const onUploadLogo = async (e) => {
     const base64 = await convertToBase64(e.target.files[0]);
     setLogoFile(base64);
+    onChange(e);
   };
 
   const handleClick = (e) => {
     e.preventDefault();
     console.log("click");
-    addBrand(brands.brandName, brands.brandCategory, brands.brandDescription);
+    addBrand(
+      brands.brandName,
+      brands.brandCategory,
+      brands.brandDescription,
+      brands.brandWebsite,
+      brands.brandContact,
+      brands.brandEmail,
+      brands.brandAddress,
+      brands.brandCity,
+      brands.brandState,
+      brands.brandZip,
+      brands.brandSocialFacebook,
+      brands.brnadSocialInsta,
+      brands.brnadSocialInsta,
+      brands.brandImage,
+      brands.brandLogo
+    );
   };
 
   const onChange = (e) => {
@@ -61,7 +79,7 @@ function ThirdBrand() {
                   overflow: "hidden",
                 }}
               >
-                <label htmlFor="profile">
+                <label htmlFor="brandImage">
                   {file === "" ? (
                     <p className=" text-3xl text-gray-500 font-normal">
                       {" "}
@@ -80,8 +98,8 @@ function ThirdBrand() {
                   className="hidden"
                   onChange={onUpload}
                   type="file"
-                  name="profile"
-                  id="profile"
+                  name="brandImage"
+                  id="brandImage"
                 />
               </div>
 
@@ -94,7 +112,7 @@ function ThirdBrand() {
                   overflow: "hidden",
                 }}
               >
-                <label htmlFor="profileLogo">
+                <label htmlFor="brandLogo">
                   {logoFile === "" ? (
                     <p className="text-3xl text-gray-500 font-normal">
                       {" "}
@@ -113,8 +131,8 @@ function ThirdBrand() {
                   className="hidden"
                   onChange={onUploadLogo}
                   type="file"
-                  name="profileLogo"
-                  id="profileLogo"
+                  name="brandLogo"
+                  id="brandLogo"
                 />
               </div>
               {/* <div className="h-52 rounded-xl p-3  mt-6 bg-slate-100 flex justify-center items-center">
@@ -151,7 +169,15 @@ function ThirdBrand() {
               identifiles with your products or services
             </div> */}
 
-            <div className="flex justify-between" style={{ width: "725px" }}>
+            <button
+              type="button"
+              onClick={handleClick}
+              className="rounded-lg p-3 w-3/4 mt-10  bg-blue-400"
+            >
+              + Add Your Brand
+            </button>
+
+            {/* <div className="flex justify-between" style={{ width: "725px" }}>
               <Link
                 to="/secondBrand"
                 className="rounded-lg px-24 py-3 w-2/5 mt-10  bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold text-lg"
@@ -164,7 +190,7 @@ function ThirdBrand() {
               >
                 Next
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <Display />

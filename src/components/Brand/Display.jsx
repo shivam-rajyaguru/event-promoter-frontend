@@ -15,7 +15,14 @@ function Display() {
 
         <div className="mt-10">
           <div className="mx-20 bg-gray-200 rounded-2xl border-4 border-gray-300">
-            {!file === "" ? (
+            {file === "" ? (
+              <div
+                className="h-80 bg-gray-100 text-gray-600 font-bold text-4xl flex justify-center items-center rounded-t-2xl"
+                style={{ width: "602px" }}
+              >
+                Brand Image
+              </div>
+            ) : (
               <div
                 className="h-80 bg-gray-100 text-gray-600 font-bold text-4xl flex justify-center items-center rounded-t-2xl"
                 style={{
@@ -26,8 +33,6 @@ function Display() {
               >
                 <img className="w-full h-full object-cover" src={file} alt="" />
               </div>
-            ) : (
-              <div>Brand Image</div>
             )}
 
             <div class="relative w-32 h-32 ml-10 -mt-20 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-500">
@@ -45,7 +50,24 @@ function Display() {
               </p>
               <p className="text-sm ml-4 -mt-3 mb-6">
                 {/* {brands.brandCategory === "" ? "" : brands.brandCategory} */}
-                1234 Address , St.Dallas , Texas 60607
+
+                <span>
+                  {brands.brandAddress === ""
+                    ? "1234 Address"
+                    : brands.brandAddress}
+                  {" , "}
+                </span>
+                <span>
+                  {brands.brandCity === "" ? "St.Dallas" : brands.brandCity}{" "}
+                </span>
+
+                <span>
+                  {brands.brandState === "" ? "Texas" : brands.brandState}{" "}
+                </span>
+
+                <span>
+                  {brands.brandZip === "" ? "60607" : brands.brandZip}
+                </span>
               </p>
               <p className="mt-2 m-4 pb-4" style={{ fontSize: "17px" }}>
                 {brands.brandDescription === ""

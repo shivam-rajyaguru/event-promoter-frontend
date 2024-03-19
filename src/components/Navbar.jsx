@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <div className="">
         <nav className=" flex justify-between h-12 items-center bg-slate-100">
-          <h2 className="text-2xl ml-12">KeepUsPost</h2>
+          <h2 className="text-2xl ml-12">Event-Promoter</h2>
           <ul className="flex space-x-8 mr-36">
             <Link to="/home" className="cursor-pointer">
               Home

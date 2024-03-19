@@ -19,6 +19,9 @@ import SecondBrand from "./components/SecondBrand";
 import ThirdBrand from "./components/ThirdBrand";
 import Cash from "./components/Cash";
 import PostedPay from "./components/PostedPay";
+import Error from "./components/Error";
+import Reward from "./components/Reward";
+import DistributeReward from "./components/DistributeReward";
 
 function App() {
   return (
@@ -38,9 +41,15 @@ function App() {
           <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/activity" element={<Activity />}></Route>
           <Route exact path="/cash" element={<Cash />}></Route>
+          <Route exact path="/reward" element={<Reward />}></Route>
           <Route exact path="/postedPay" element={<PostedPay />}></Route>
-        </Routes>
-        <Routes>
+          <Route
+            exact
+            path="/distributeReward"
+            element={<DistributeReward />}
+          ></Route>
+          <Route path="*" element={<Error />}></Route>
+
           <Route exact path="/brandPage" element={<NavbarBrand />}></Route>
           <Route
             exact
@@ -50,6 +59,8 @@ function App() {
           <Route exact path="/homeBrand" element={<HomeBrand />}></Route>
           <Route exact path="/secondBrand" element={<SecondBrand />}></Route>
           <Route exact path="/thirdBrand" element={<ThirdBrand />}></Route>
+
+          <Route path="*" element={<Error />}></Route>
         </Routes>
       </Router>
     </>

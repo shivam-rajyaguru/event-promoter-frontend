@@ -208,13 +208,13 @@ function SecondBrand() {
               </div>
             </div>
 
-            <button
+            {/* <button
               type="button"
               onClick={handleClick}
               className="rounded-lg p-3 w-3/4 mt-10  bg-blue-400"
             >
               + Add Your Brand
-            </button>
+            </button> */}
             <div className="flex justify-between" style={{ width: "725px" }}>
               <Link
                 className="rounded-lg px-24 py-3 w-2/5 mt-10  bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold text-lg"

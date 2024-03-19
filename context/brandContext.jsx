@@ -19,6 +19,8 @@ const BrandProvider = ({ children }) => {
     brandSocialFacebook: "",
     brnadSocialInsta: "",
     brandSocialTweet: "",
+    brandImage: "",
+    brandLogo: "",
   });
 
   const addBrand = async (
@@ -34,7 +36,9 @@ const BrandProvider = ({ children }) => {
     brandZipParam,
     brandSocialFacebookParam,
     brnadSocialInstaParam,
-    brandSocialTweetParam
+    brandSocialTweetParam,
+    brandImageParam,
+    brandLogoParam
   ) => {
     const brandName = brandNameParam[0];
     const brandCategory = brandCategoryParam[0];
@@ -49,6 +53,8 @@ const BrandProvider = ({ children }) => {
     const brandSocialFacebook = brandSocialFacebookParam[0];
     const brnadSocialInsta = brnadSocialInstaParam[0];
     const brandSocialTweet = brandSocialTweetParam[0];
+    const brandImage = brandImageParam[0];
+    const brandLogo = brandLogoParam[0];
 
     console.log(
       brandName,
@@ -63,7 +69,9 @@ const BrandProvider = ({ children }) => {
       brandZip,
       brandSocialFacebook,
       brnadSocialInsta,
-      brandSocialTweet
+      brandSocialTweet,
+      brandImage,
+      brandLogo
     );
 
     const response = await fetch(
@@ -88,6 +96,8 @@ const BrandProvider = ({ children }) => {
           brandSocialFacebook: brandSocialFacebook,
           brnadSocialInsta: brnadSocialInsta,
           brandSocialTweet: brandSocialTweet,
+          brandImage: brandImage,
+          brandLogo: brandLogo,
         }),
       }
     );
@@ -110,6 +120,8 @@ const BrandProvider = ({ children }) => {
       brandSocialFacebook: brandSocialFacebook,
       brnadSocialInsta: brnadSocialInsta,
       brandSocialTweet: brandSocialTweet,
+      brandImage: brandImage,
+      brandLogo: brandLogo,
     };
 
     setBrand(brand.concat(brd));

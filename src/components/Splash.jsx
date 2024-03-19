@@ -14,8 +14,10 @@ function Splash() {
         }}
         className="h-screen"
       >
-        <div className="flex pt-5 ">
-          <div className="ml-16 font-bold text-4xl text-black">KeepUsPost</div>
+        <div className="flex pt-8 ">
+          <div className="ml-16 font-bold text-4xl text-black">
+            Event-Promoter
+          </div>
           <div className="ml-[70%]">
             <Link
               to="/login"
@@ -37,9 +39,10 @@ function Splash() {
             <div className="text-7xl text-white">We Believe Everyone</div>
             <div className="text-7xl text-white">Has Influence</div>
           </div>
-          <div style={{ width: "500px" }} className="text-2xl ml-24 mt-5">
-            Seamless and affordable.KeepUsPost partners you with your community.
-            Get the kind of brand awareness that turns into loyal customers.
+          <div style={{ width: "650px" }} className="text-2xl ml-24 mt-10">
+            Seamless and affordable. Event-Promoter partners you with your
+            community. Get the kind of brand awareness that turns into loyal
+            customers.
           </div>
         </div>
       </div>

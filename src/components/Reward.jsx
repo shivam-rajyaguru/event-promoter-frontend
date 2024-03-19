@@ -4,7 +4,7 @@ import { SlMagnifier } from "react-icons/sl";
 import { MdOutlineMessage } from "react-icons/md";
 import { useNavigate, Link } from "react-router-dom";
 
-function Cash() {
+function Reward() {
   const navigate = useNavigate();
   return (
     <>
@@ -13,7 +13,7 @@ function Cash() {
         {/* style={{ height: "100vh" }} */}
         <div className="">
           <div className="mx-80 mt-24">
-            <h2 className="text-2xl">Cash</h2>
+            <h2 className="text-2xl">Rewards</h2>
             <div className="flex items-center mt-6">
               <input
                 type="text"
@@ -54,9 +54,9 @@ function Cash() {
                 data-modal-show="crud-modal"
                 className="block text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-14 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-600"
                 type="button"
-                onClick={() => navigate("/postedPay")}
+                onClick={() => navigate("/distributeReward")}
               >
-                Postd Pay
+                Distribute Rewards
               </button>
             </div>
             <div className="relative overflow-x-auto mt-8 shadow-md sm:rounded-lg">
@@ -73,13 +73,13 @@ function Cash() {
                       Influencers
                     </th>
                     <th scope="col" className="px-6 py-3">
-                      Last paid amount
+                      Current points / Total required
                     </th>
                     <th scope="col" className="px-6 py-3">
-                      Total amount paid
+                      Unlocked rewards
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                      Transactions
+                    <th scope="col" className="px-14 py-3">
+                      Status
                     </th>
                     <th scope="col" className="px-6 py-3">
                       Message
@@ -135,18 +135,14 @@ function Cash() {
                       <td className="px-6 py-4">
                         <div className="flex items-center">
                           <div className="h-2.5 w-2.5 me-2"></div>
-                          <div className="  text-gray-600 px-2">
-                            $50.00
-                            <br />
-                            <span className="-ml-4 text-blue-500 text-base underline">
-                              <a href="#">see details</a>
-                            </span>
-                          </div>
+                          <div className=" text-gray-600 px-14">300/2500</div>
                           {/* {influ.lastsubmission} */}
                         </div>
                       </td>
-                      <td className="px-14 py-4">$425.00</td>
-                      <td className="px-14 py-4">42</td>
+                      <td className="px-16 py-4">none</td>
+                      <td className="px-8 py-4 w-52">
+                        No rewards to send at this time
+                      </td>
 
                       <td className="px-10 py-4">
                         <div className="font-medium text-blue-600 dark:text-blue-500 ">
@@ -168,4 +164,4 @@ function Cash() {
   );
 }
 
-export default Cash;
+export default Reward;
