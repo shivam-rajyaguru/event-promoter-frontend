@@ -5,13 +5,13 @@ import Display from "./Brand/Display";
 import { useNavigate, Link } from "react-router-dom";
 
 function Brand() {
-  const { addBrand, brands, setBrands } = useBrandGlobalContext();
+  const { brands, setBrands } = useBrandGlobalContext();
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log("click");
-    addBrand(brands.brandName, brands.brandCategory, brands.brandDescription);
-  };
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   console.log("click");
+  //   addBrand(brands.brandName, brands.brandCategory, brands.brandDescription);
+  // };
 
   const onChange = (e) => {
     setBrands({ ...brands, [e.target.name]: [e.target.value] });
@@ -73,7 +73,7 @@ function Brand() {
             </div>
             <button
               type="button"
-              onClick={handleClick}
+              // onClick={handleClick}
               className="rounded-lg p-3 w-3/4 mt-10  bg-blue-400"
             >
               + Add Your Brand

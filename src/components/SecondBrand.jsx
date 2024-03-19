@@ -14,7 +14,33 @@ function SecondBrand() {
   const handleClick = (e) => {
     e.preventDefault();
     console.log("click");
-    addBrand(brands.brandName, brands.brandCategory, brands.brandDescription);
+    addBrand(
+      brands.brandName,
+      brands.brandCategory,
+      brands.brandDescription,
+      brands.brandWebsite,
+      brands.brandContact,
+      brands.brandEmail,
+      brands.brandAddress,
+      brands.brandCity,
+      brands.brandState,
+      brands.brandZip,
+      brands.brandSocialFacebook,
+      brands.brnadSocialInsta,
+      brands.brnadSocialInsta
+    );
+    // addBrandSecond(
+    //   brands.brandWebsite,
+    //   brands.brandContact,
+    //   brands.brandEmail,
+    //   brands.brandAddress,
+    //   brands.brandCity,
+    //   brands.brandState,
+    //   brands.brandZip,
+    //   brands.brandSocialFacebook,
+    //   brands.brnadSocialInsta,
+    //   brands.brnadSocialInsta
+    // );
   };
 
   const onChange = (e) => {
@@ -48,19 +74,19 @@ function SecondBrand() {
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandWebsite"
               onChange={onChange}
               placeholder=" Website"
-              id="brandName"
+              id="brandWebsite"
             />
             <div className="flex">
               <div>
                 <select
-                  name=""
-                  id=""
+                  name="brandContact"
+                  id="brandContact"
                   className="rounded-lg p-3 mt-4 border border-gray-300 bg-gray-200"
                 >
-                  <option selected value="US">
+                  <option selected value="US" onChange={onchange}>
                     US (+1)
                   </option>
                   <option value="AUS">AUS (+61)</option>
@@ -79,10 +105,10 @@ function SecondBrand() {
                   className="rounded-lg p-3 mt-4 ml-4 border border-gray-300 bg-slate-100"
                   type="text"
                   style={{ width: "567px" }}
-                  name="brandCategory"
+                  name="brandContact"
                   onChange={onChange}
                   placeholder="Phone number"
-                  id="brandCategory"
+                  id="brandContact"
                 />
               </div>
             </div>
@@ -90,24 +116,24 @@ function SecondBrand() {
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandEmail"
               onChange={onChange}
               placeholder=" Email"
-              id="brandName"
+              id="brandEmail"
             />
             <div className="font-extrabold text-base mt-4">Location</div>
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandAddress"
               onChange={onChange}
               placeholder=" Address"
-              id="brandName"
+              id="brandAddress"
             />
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandCity"
               onChange={onChange}
               placeholder=" City"
               id="brandName"
@@ -115,18 +141,18 @@ function SecondBrand() {
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandState"
               onChange={onChange}
               placeholder=" State"
-              id="brandName"
+              id="brandState"
             />
             <input
               className="rounded-lg p-3 w-3/4 mt-2 bg-slate-100 border border-gray-300"
               type="text"
-              name="brandName"
+              name="brandZip"
               onChange={onChange}
               placeholder=" Zip"
-              id="brandName"
+              id="brandZip"
             />
 
             <div className="font-extrabold text-base mt-4">Social Channels</div>
@@ -140,10 +166,10 @@ function SecondBrand() {
                   className="rounded-lg p-3 mt-4 ml-4 border border-gray-300 bg-slate-100"
                   type="text"
                   style={{ width: "675px" }}
-                  name="brandCategory"
+                  name="brandSocialFacebook"
                   onChange={onChange}
                   placeholder=" Facebook"
-                  id="brandCategory"
+                  id="brandSocialFacebook"
                 />
               </div>
             </div>
@@ -157,10 +183,10 @@ function SecondBrand() {
                   className="rounded-lg p-3 mt-4 ml-4 border border-gray-300 bg-slate-100"
                   type="text"
                   style={{ width: "675px" }}
-                  name="brandCategory"
+                  name="brnadSocialInsta"
                   onChange={onChange}
-                  placeholder=" Facebook"
-                  id="brandCategory"
+                  placeholder=" Instagram"
+                  id="brnadSocialInsta"
                 />
               </div>
             </div>
@@ -174,10 +200,10 @@ function SecondBrand() {
                   className="rounded-lg p-3 mt-4 ml-4 border border-gray-300 bg-slate-100"
                   type="text"
                   style={{ width: "675px" }}
-                  name="brandCategory"
+                  name="brandSocialTweet"
                   onChange={onChange}
-                  placeholder=" Facebook"
-                  id="brandCategory"
+                  placeholder=" Twitter"
+                  id="brandSocialTweet"
                 />
               </div>
             </div>

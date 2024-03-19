@@ -1,10 +1,16 @@
 import React from "react";
 import { FaRegBell } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/store";
 
 const Navbar = () => {
   const { username } = useAuthStore((state) => state.auth);
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
   return (
     <>
       <div className="">
@@ -36,6 +42,9 @@ const Navbar = () => {
                 />
                 <p>{username}</p>
               </div>{" "}
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </nav>

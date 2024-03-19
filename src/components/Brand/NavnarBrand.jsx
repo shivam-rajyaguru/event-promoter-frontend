@@ -1,10 +1,11 @@
 import React from "react";
 import { FaRegBell } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import { useAuthStore } from "../store/store";
+import { useAuthStore } from "../../store/store";
 
 const NavbarBrand = () => {
-  //   const { username } = useAuthStore((state) => state.auth);
+  const { username } = useAuthStore((state) => state.auth);
+  console.log(username);
   return (
     <>
       <div className="">
@@ -31,7 +32,7 @@ const NavbarBrand = () => {
                   style={{ height: "20px", width: "20px", borderRadius: "50%" }}
                   alt="phto"
                 />
-                <p>David</p>
+                <p>{username}</p>
               </div>{" "}
             </li>
           </ul>

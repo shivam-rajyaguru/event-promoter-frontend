@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useBrandGlobalContext } from "../../../context/brandContext";
+import avatar from "../../assets/profile.png";
+import styles from "../../styles/Login.module.css";
 
 function Display() {
-  const { brands } = useBrandGlobalContext();
+  const { brands, file, logoFile } = useBrandGlobalContext();
+
   return (
     <>
       <div className="mt-5" style={{ width: "770px" }}>
@@ -12,25 +15,27 @@ function Display() {
 
         <div className="mt-10">
           <div className="mx-20 bg-gray-200 rounded-2xl border-4 border-gray-300">
-            <div
-              className="h-80 bg-gray-100 text-gray-600 font-bold text-4xl flex justify-center items-center rounded-t-2xl"
-              style={{ width: "602px" }}
-            >
-              Brand Image
-            </div>
-            <div class="relative w-36 h-36 ml-10 -mt-20 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-500">
-              <svg
-                class="absolute w-38 h-34 text-gray-400 -left-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+            {!file === "" ? (
+              <div
+                className="h-80 bg-gray-100 text-gray-600 font-bold text-4xl flex justify-center items-center rounded-t-2xl"
+                style={{
+                  width: "100%",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
+                <img className="w-full h-full object-cover" src={file} alt="" />
+              </div>
+            ) : (
+              <div>Brand Image</div>
+            )}
+
+            <div class="relative w-32 h-32 ml-10 -mt-20 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-500">
+              <img
+                src={logoFile || avatar}
+                className={styles.profile_img_logo}
+                alt="avatar"
+              />
             </div>
             <div className="ml-6">
               <p className="font-bold text-xl m-4 pt-4">

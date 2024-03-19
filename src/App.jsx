@@ -17,6 +17,8 @@ import HomeBrand from "./components/Brand/HomeBrand";
 import Activity from "./components/Activity";
 import SecondBrand from "./components/SecondBrand";
 import ThirdBrand from "./components/ThirdBrand";
+import Cash from "./components/Cash";
+import PostedPay from "./components/PostedPay";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route exact path="/brandcontact" element={<ContactPage />}></Route>
           <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/activity" element={<Activity />}></Route>
+          <Route exact path="/cash" element={<Cash />}></Route>
+          <Route exact path="/postedPay" element={<PostedPay />}></Route>
         </Routes>
         <Routes>
           <Route exact path="/brandPage" element={<NavbarBrand />}></Route>

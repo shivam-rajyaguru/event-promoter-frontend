@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarBrand from "./Brand/NavnarBrand";
 import { useBrandGlobalContext } from "../../context/brandContext";
 import Display from "./Brand/Display";
 import { useNavigate, Link } from "react-router-dom";
 import { TbBrandItch } from "react-icons/tb";
+import convertToBase64 from "../helper/convert";
 
 function ThirdBrand() {
-  const { addBrand, brands, setBrands } = useBrandGlobalContext();
+  const { addBrand, brands, setBrands, file, setFile, logoFile, setLogoFile } =
+    useBrandGlobalContext();
+
+  const onUpload = async (e) => {
+    const base64 = await convertToBase64(e.target.files[0]);
+    setFile(base64);
+  };
+  const onUploadLogo = async (e) => {
+    const base64 = await convertToBase64(e.target.files[0]);
+    setLogoFile(base64);
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -41,40 +52,92 @@ function ThirdBrand() {
               your brand.
             </div>
 
-            <div className="h-52 rounded-xl p-3 w-3/4 mt-6 bg-slate-100 flex justify-center items-center">
-              <label htmlFor="profile">
-                <div className="flex justify-center items-center text-3xl text-gray-700">
-                  Add Brand Image
-                </div>
-                <img src="" className="" alt="" />
-              </label>
-              <input
-                className="h-48 hidden"
-                type="file"
-                name="profile"
-                id="profile"
-              />
-            </div>
+            <div className="w-3/4 mt-6">
+              <div
+                className="h-52 rounded-xl  bg-slate-100 flex justify-center items-center"
+                style={{
+                  width: "100%",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <label htmlFor="profile">
+                  {file === "" ? (
+                    <p className=" text-3xl text-gray-500 font-normal">
+                      {" "}
+                      Add Brand Image
+                    </p>
+                  ) : (
+                    <img
+                      className="w-full h-full object-cover"
+                      src={file}
+                      alt=""
+                    />
+                  )}
+                  {/* Add Brand Image */}
+                </label>
+                <input
+                  className="hidden"
+                  onChange={onUpload}
+                  type="file"
+                  name="profile"
+                  id="profile"
+                />
+              </div>
 
-            <div className="h-52 rounded-xl p-3 w-3/4 mt-6 bg-slate-100 flex justify-center items-center">
-              <label htmlFor="profile">
-                <div className="flex flex-col justify-center items-center text-3xl text-gray-700">
-                  <div>
-                    <TbBrandItch size={40} />
+              <br />
+              <div
+                className="h-52 rounded-xl  bg-slate-100 flex justify-center items-center"
+                style={{
+                  width: "100%",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <label htmlFor="profileLogo">
+                  {logoFile === "" ? (
+                    <p className="text-3xl text-gray-500 font-normal">
+                      {" "}
+                      Add Brand Logo
+                    </p>
+                  ) : (
+                    <img
+                      className="w-full h-full object-cover"
+                      src={logoFile}
+                      alt=""
+                    />
+                  )}
+                  {/* Add Brand Image */}
+                </label>
+                <input
+                  className="hidden"
+                  onChange={onUploadLogo}
+                  type="file"
+                  name="profileLogo"
+                  id="profileLogo"
+                />
+              </div>
+              {/* <div className="h-52 rounded-xl p-3  mt-6 bg-slate-100 flex justify-center items-center">
+                <label htmlFor="profile">
+                  <div className="flex flex-col justify-center items-center text-3xl text-gray-700">
+                    <div>
+                      <TbBrandItch size={40} />
+                    </div>
+                    <div className="text-black font-medium">Add Brand Logo</div>
+                    <div className="text-base">400 x 400 (Best Fit)</div>
                   </div>
-                  <div className="text-black font-medium">Add Brand Logo</div>
-                  <div className="text-base">400 x 400 (Best Fit)</div>
-                </div>
 
-                <img src="" className="" alt="" />
-              </label>
-              <input
-                className="h-48 hidden"
-                type="file"
-                name="profile"
-                id="profile"
-              />
+                  <img src="" className="" alt="" />
+                </label>
+                <input
+                  className="h-48 hidden"
+                  type="file"
+                  name="profile"
+                  id="profile"
+                />
+              </div> */}
             </div>
+
             {/* <input
               className="rounded-lg p-3 w-3/4 mt-4 bg-slate-100"
               type="text"

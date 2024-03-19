@@ -380,69 +380,7 @@ function Influencers() {
                       </div>
                     </td>
                   </tr>
-                  {/* <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <td className="w-4 p-4">
-                    <div className="flex items-center"></div>
-                  </td>
-                  <th
-                    scope="row"
-                    className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    <img
-                      className="w-10 h-10 rounded-full"
-                      src="/docs/images/people/profile-picture-3.jpg"
-                      alt="Jese image"
-                    />
-                    <div className="ps-3">
-                      <div className="text-base font-semibold">@username</div>
-                      <div className="font-normal text-gray-500">Micro tier</div>
-                    </div>
-                  </th>
-                  <td className="px-6 py-4">678</td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center">
-                      <div className="h-2.5 w-2.5 me-2"></div> February 21st, 2023
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="font-medium text-blue-600 dark:text-blue-500 ">
-                      February 21st, 2023
-                    </div>
-                  </td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <td className="w-4 p-4">
-                    <div className="flex items-center"></div>
-                  </td>
-                  <th
-                    scope="row"
-                    className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    <img
-                      className="w-10 h-10 rounded-full"
-                      src="/docs/images/people/profile-picture-2.jpg"
-                      alt="Jese image"
-                    />
-                    <div className="ps-3">
-                      <div className="text-base font-semibold">@username</div>
-                      <div className="font-normal text-gray-500">Micro tier</div>
-                    </div>
-                  </th>
-                  <td className="px-6 py-4">78</td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center">
-                      <div className="h-2.5 w-2.5  me-2"></div> September 21st, 2023
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="font-medium text-blue-600 dark:text-blue-500 ">
-                      May 11th, 2023
-                    </div>
-                  </td>
-                </tr> */}
                 </>
-                {/* ); */}
-                {/* })} */}
               </tbody>
             </table>
           </div>
