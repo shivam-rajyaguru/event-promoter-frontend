@@ -11,8 +11,11 @@ import { toast, Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import convertToBase64 from "../helper/convert";
 import { useAuthStore } from "../store/store";
+import { useGlobalContext } from "../../context/influenceContext";
 
 function Register() {
+  const { file, setFile } = useGlobalContext();
+
   const setUsername = useAuthStore((state) => state.setUsername);
   const { username } = useAuthStore((state) => state.auth);
 
@@ -21,7 +24,6 @@ function Register() {
   });
 
   const navigate = useNavigate();
-  const [file, setFile] = useState();
 
   const setProfile = useAuthStore((state) => state.setProfile);
   const { profile } = useAuthStore((state) => state.auth);
@@ -120,7 +122,7 @@ function Register() {
               <div className="profile flex justify-center py-4">
                 <label htmlFor="profile">
                   <img
-                    src={file || avatar}
+                    src={file === "" ? avatar : file}
                     className={styles.profile_img}
                     alt="avatar"
                   />

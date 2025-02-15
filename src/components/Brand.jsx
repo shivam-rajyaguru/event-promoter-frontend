@@ -3,6 +3,7 @@ import NavbarBrand from "./Brand/NavnarBrand";
 import { useBrandGlobalContext } from "../../context/brandContext";
 import Display from "./Brand/Display";
 import { useNavigate, Link } from "react-router-dom";
+import Footer from "./Footer";
 
 function Brand() {
   const { brands, setBrands } = useBrandGlobalContext();
@@ -93,6 +94,7 @@ function Brand() {
         </div>
         <Display />
       </div>
+      <Footer />
     </>
   );
 }

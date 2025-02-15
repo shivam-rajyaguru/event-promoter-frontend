@@ -1,11 +1,18 @@
 import React from "react";
 import { FaRegBell } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../store/store";
 
 const NavbarBrand = () => {
   const { username } = useAuthStore((state) => state.auth);
   console.log(username);
+
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
   return (
     <>
       <div className="">
@@ -34,6 +41,9 @@ const NavbarBrand = () => {
                 />
                 <p>{username}</p>
               </div>{" "}
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </nav>

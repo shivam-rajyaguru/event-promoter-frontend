@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { SlMagnifier } from "react-icons/sl";
 import { useGlobalContext } from "../../context/influenceContext";
+import Footer from "./Footer";
 
 function Influencers() {
   const [showModal, setShowModal] = useState(false);
@@ -136,7 +137,7 @@ function Influencers() {
                             name="name"
                             id="name"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer name"
                             required=""
                             onChange={onChange}
                           />
@@ -153,7 +154,7 @@ function Influencers() {
                             name="username"
                             id="username"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer username"
                             required=""
                             onChange={onChange}
                           />
@@ -170,7 +171,7 @@ function Influencers() {
                             name="email"
                             id="email"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer Email"
                             required=""
                             onChange={onChange}
                           />
@@ -187,7 +188,7 @@ function Influencers() {
                             name="country"
                             id="country"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer country"
                             required=""
                             onChange={onChange}
                           />
@@ -204,7 +205,7 @@ function Influencers() {
                             name="totalsubmission"
                             id="totalsubmission"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer Total Submission"
                             required=""
                             onChange={onChange}
                           />
@@ -221,7 +222,7 @@ function Influencers() {
                             name="lastsubmission"
                             id="lastsubmission"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                            placeholder="Type product name"
+                            placeholder="Enter Influencer Last Submission"
                             required=""
                             onChange={onChange}
                           />
@@ -253,8 +254,8 @@ function Influencers() {
             )}
           </div>
 
-          <div className="relative overflow-x-auto mt-5 shadow-md sm:rounded-lg">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+          <div className="relative overflow-x-auto mt-5 mb-12 shadow-md sm:rounded-lg">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 mb-28 ">
               <thead className="text-s text-gray-700 uppercase bg-gray-200">
                 <tr>
                   <th scope="col" className="p-4">
@@ -380,6 +381,7 @@ function Influencers() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

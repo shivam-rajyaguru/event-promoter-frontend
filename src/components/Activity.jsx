@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import BrandAnalysisTable from "./Brand/BrandAnalysisTable";
 import BrandChart from "./Brand/BrandChart";
 import BrrandInflueTable from "./Brand/BrrandInflueTable";
+import Footer from "./Footer";
 
 function Activity() {
   return (
@@ -26,6 +27,7 @@ function Activity() {
           <BrrandInflueTable header={"Posted"} />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { FaDollarSign } from "react-icons/fa";
 import { ImTrophy } from "react-icons/im";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaGift } from "react-icons/fa";
+import Footer from "./Footer";
 
 function DistributeReward() {
   return (
@@ -42,8 +43,8 @@ function DistributeReward() {
                     ></path>
                   </svg>
                 </div>
-                <div className="mt-2">@username</div>
-                <div className="text-xs text-gray-700">Micro tier</div>
+                <div className="mt-2">@m_sitlani</div>
+                <div className="text-xs text-gray-700"> Malvika Sitlani</div>
               </div>
             </div>
             <div className="bg-gray-100 w-9/12 rounded-xl">
@@ -101,6 +102,7 @@ function DistributeReward() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

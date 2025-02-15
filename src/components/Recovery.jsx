@@ -28,7 +28,7 @@ function Recovery() {
       console.log(status);
       if (status === 201) {
         toast.success("Verify Successfully!");
-        return navigate("/reset");
+        navigate("/reset");
       }
     } catch (error) {
       return toast.error("Wront OTP! Check email again!");

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { AiTwotoneCrown } from "react-icons/ai";
 import { FaDollarSign } from "react-icons/fa";
+import Footer from "./Footer";
 
 function PostedPay() {
   return (
@@ -39,8 +40,8 @@ function PostedPay() {
                     ></path>
                   </svg>
                 </div>
-                <div className="mt-2">@username</div>
-                <div className="text-xs text-gray-700">Micro tier</div>
+                <div className="mt-2">@m_sitlani</div>
+                <div className="text-xs text-gray-700">Malvika Sitlani</div>
               </div>
             </div>
             <div className="bg-gray-100 w-9/12 rounded-xl">
@@ -84,6 +85,7 @@ function PostedPay() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

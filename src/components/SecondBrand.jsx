@@ -7,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
+import Footer from "./Footer";
 
 function SecondBrand() {
   const { addBrand, brands, setBrands } = useBrandGlobalContext();
@@ -233,6 +234,7 @@ function SecondBrand() {
         </div>
         <Display />
       </div>
+      {/* <Footer /> */}
     </>
   );
 }

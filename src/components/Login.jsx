@@ -4,7 +4,6 @@ import avatar from "../assets/profile.png";
 import styles from "../styles/Login.module.css";
 import { userPassValidate } from "../helper/validate";
 import { useAuthStore } from "../store/store";
-
 import { Toaster, toast } from "react-hot-toast";
 import { useFormik } from "formik";
 import useFetch from "../hooks/useFetch";
@@ -51,7 +50,7 @@ function Login() {
         let { token, userType } = res.data;
         localStorage.setItem("token", token);
         {
-          userType == "Admin" ? navigate("/home") : navigate("/homeBrand");
+          userType == "Admin" ? navigate("/activity") : navigate("/homeBrand");
         }
       });
     },

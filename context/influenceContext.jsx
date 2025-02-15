@@ -4,6 +4,8 @@ const InfluenceContext = createContext("");
 
 const InfluenceProvider = ({ children }) => {
   const [influence, setInfluence] = useState([]);
+
+  const [file, setFile] = useState("");
   const getAllData = async () => {
     try {
       const response = await fetch("http://localhost:2516/api/v1/influence", {
@@ -85,7 +87,14 @@ const InfluenceProvider = ({ children }) => {
   };
   return (
     <InfluenceContext.Provider
-      value={{ getAllData, influence, addInfluence, getSearchData }}
+      value={{
+        getAllData,
+        influence,
+        addInfluence,
+        getSearchData,
+        file,
+        setFile,
+      }}
     >
       {children}
     </InfluenceContext.Provider>

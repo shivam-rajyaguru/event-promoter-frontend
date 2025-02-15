@@ -5,6 +5,7 @@ import Display from "./Brand/Display";
 import { useNavigate, Link } from "react-router-dom";
 import { TbBrandItch } from "react-icons/tb";
 import convertToBase64 from "../helper/convert";
+import Footer from "./Footer";
 
 function ThirdBrand() {
   const { addBrand, brands, setBrands, file, setFile, logoFile, setLogoFile } =
@@ -41,6 +42,9 @@ function ThirdBrand() {
       brands.brandImage,
       brands.brandLogo
     );
+
+    alert("Saved data in database");
+    navigate("/homebrand");
   };
 
   const onChange = (e) => {
@@ -195,6 +199,7 @@ function ThirdBrand() {
         </div>
         <Display />
       </div>
+      <Footer />
     </>
   );
 }

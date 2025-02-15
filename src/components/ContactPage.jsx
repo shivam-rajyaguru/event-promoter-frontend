@@ -1,6 +1,7 @@
 import React from "react";
 
 import NavbarBrand from "./Brand/NavnarBrand";
+import Footer from "./Footer";
 
 function ContactPage() {
   return (
@@ -74,6 +75,7 @@ function ContactPage() {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 }
